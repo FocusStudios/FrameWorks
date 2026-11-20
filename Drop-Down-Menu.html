@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drop Down Menu 2</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<style>
+
+html {
+-webkit-tap-highlight-color: transparent;
+scroll-behavior:smooth;}
+
+:root {
+--primary:#8307BD;
+--secondary:#FFFFFF;}
+
+* {
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Sans-serif;
+transition:0.3s;}
+
+body {
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+background:#f5f5f5;}
+
+.Menu {
+position:absolute;
+top:0;
+left:0;
+width:100vw;
+padding:20px;
+display:flex;
+justify-content:start;
+align-items:start;
+overflow-x:auto;
+gap:20px;
+list-style:none;}
+
+.Menu .item {
+position:relative;
+display:flex;
+justify-content:center;
+align-items:start;
+flex-direction:column;
+gap:10px;}
+
+.Menu .item .wrapper:hover, .Menu .menu-btn.active .wrapper {
+color:var(--secondary);
+background:var(--primary);
+box-shadow:0 10px 20px rgba(0,0,0,0.1);}
+
+.wrapper {
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+gap:5px;
+padding:14px 22px;
+color:var(--primary);
+border-radius:50px;
+font-size:0.7rem;
+font-weight:1000;}
+
+.Menu .arrow {
+width:15px;
+height:15px;
+background:red;}
+
+.Menu .item .wrapper:hover .arrow, .Menu .menu-btn.active .wrapper .arrow {
+transform:translateY(3px);}
+
+.menu-container {
+position:relative;
+top:-4px;
+display:flex;
+justify-content:center;
+align-items:start;
+gap:6px;
+border-radius:10px;
+pointer-events:none;}
+
+.menu, .submenu {
+position:relative;
+width:160px;
+border-radius:10px;
+background:white;
+list-style:none;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+gap:6px;
+padding:6px;
+opacity:0;
+pointer-events:none;
+box-shadow:0 5px 10px rgba(0,0,0,0.1);}
+
+.menu.active, .submenu.active {
+opacity:1;
+pointer-events:auto;}
+
+.menu li, .submenu li {
+position:relative;
+width:100%;
+height:35px;
+border-radius:5px;
+padding:0 10px;
+display:flex;
+align-items:center;
+color:var(--primary);
+font-size:0.65rem;
+font-weight:1000;}
+
+.menu li span, .submenu li span {
+position:absolute;
+left:10px;}
+
+.menu li .arrow, .submenu li .arrow {
+position:absolute;
+right:10px;}
+
+.menu li:hover, .submenu li:hover, .menu li.active ,.submenu li.active {
+background:rgba(131, 7, 189,0.1);}
+
+.menu li:hover .arrow, .submenu li:hover .arrow, .menu li.active .arrow, .submenu li.active .arrow {
+transform:translateX(3px);}
+
+@media screen and (max-height:350px) {
+
+.container {
+top:0;}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<ul class="Menu">
+
+<li class="item menu-btn">
+<div class="wrapper">
+<span>Home</span>
+<div class="arrow"></div>
+</div>
+<section class="menu-container">
+
+<ul class="menu">
+
+<li class="button">
+  <span>Item1</span>
+  <div class="arrow"></div>
+</li>
+
+<li><span>Item2</span></li>
+
+<li><span>Item3</span></li>
+
+<li><span>Item4</span></li>
+
+</ul>
+
+<ul class="submenu">
+
+<li><span>Item1</span></li>
+
+<li><span>Item2</span></li>
+
+<li><span>Item3</span></li>
+
+</ul>
+
+</li>
+
+<li class="item">
+<div class="wrapper">
+<span>Item1</span>
+</div>
+</li>
+
+<li class="item">
+<div class="wrapper">
+<span>Item2</span>
+</div>
+</li>
+
+<li class="item">
+<div class="wrapper">
+<span>Item3</span>
+</div>
+</li>
+
+<li class="item">
+<div class="wrapper">
+<span>Item4</span>
+</div>
+</li>
+
+</ul>
+
+<script>
+
+const Menu = document.querySelector(".menu");
+const Items = document.querySelectorAll(".item");
+const Submenu = document.querySelector(".submenu");
+const Button = document.querySelector(".menu-btn");
+const button = document.querySelector(".button");
+
+Items.forEach(Item => {
+Item.style.width = `${Button.querySelector(".wrapper").offsetWidth}px`;});
+
+Button.addEventListener("click",() => {
+
+Button.classList.add("active");
+Menu.classList.add("active");
+
+});
+
+button.addEventListener("click",() => {
+
+button.classList.add("active");
+Submenu.classList.add("active");
+
+});
+
+document.addEventListener("click", (e) => {
+
+  if (!Submenu.contains(e.target) && !button.contains(e.target)) {
+    button.classList.remove("active");
+    Submenu.classList.remove("active");
+  }
+
+  if (!Menu.contains(e.target) && !Button.contains(e.target)) {
+    Menu.classList.remove("active");
+    Button.classList.remove("active");
+  }
+
+});
+
+</script>
+
+</body>
+
+</html>
