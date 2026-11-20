@@ -3,17 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="preconnect" href=" https://fonts.googleapis.com ">
-<link rel="preconnect" href=" https://fonts.gstatic.com " crossorigin>
-<link href=" https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap " rel="stylesheet">
-<title>رسوم متحركة للتحميل</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<title>Loading Animations</title>
+    
 <style>
 
 html {
--webkit-tap-highlight-color:transpared;
+-webkit-tap-highlight-color:transparent;
 scroll-behavior:smooth;}
 
-جسم {
+body {
 margin:0;
 overflow-x:hidden;
 display:flex;
@@ -22,18 +23,18 @@ justify-content:center;}
 
 * {
 margin:0;
-الحشو: 0؛
-الانتقال: 0.5 ثانية؛
+padding:0;
+transition:0.5s;
 user-select:none;
-وزن الخط: 650؛
-نمط الخط: عادي؛
+font-weight:650;
+font-style:normal;
 box-sizing:border-box;
 font-family:"Prompt", serif;}
 
 .loading-animation {
-الموضع: مطلق؛
-أعلى: 0؛
-الحشو: 50 بكسل؛
+position:absolute;
+top:0;
+padding:50px;
 list-style:none;
 display:grid;
 align-items:center;
@@ -41,64 +42,64 @@ justify-content:center;
 gap:50px;}
 
 .loading-animation li {
-الموضع: نسبي؛
-العرض: 200 بكسل؛
-الارتفاع: 200 بكسل؛
+position:relative;
+width:200px;
+height:200px;
 border-radius:20px;
 display:flex;
 align-items:center;
 justify-content:center;
-الخلفية:#F5F5F5;
+background:#F5F5F5;
 overflow:hidden;}
 
 .loading-animation li .dots {
-الموضع: نسبي؛
+position:relative;
 display:flex;
 align-items:center;
 justify-content:center;
 gap:10px;}
 
 .loading-animation li .dots .dot {
-الموضع: نسبي؛
-العرض: 20 بكسل؛
-الارتفاع: 20 بكسل؛
+position:relative;
+width:20px;
+height:20px;
 border-radius:50%;
-الخلفية: #FF0099;}
+background:#FF0099;}
 
 .loading-animation .B .dots {
 gap:15px;}
 
 .loading-animation .B .dots .dot {
-الخلفية: #00CBFF;}
+background:#00CBFF;}
 
 .loading-animation .C .dots .dot {
-الخلفية: #00FF0D;}
+background:#00FF0D;}
 
 .loading-animation .D .dots .dot {
-العرض: 15 بكسل؛
-الارتفاع: 15 بكسل؛
-الخلفية: #FFE600;}
+width:15px;
+height:15px;
+background:#FFE600;}
 
 .loading-animation .E .dot {
-الموضع: مطلق؛
-يمين: 0؛
-العرض: 10 بكسل؛
-الارتفاع: 10 بكسل؛
+position:absolute;
+right:0;
+width:10px;
+height:10px;
 border-radius:50%;
-الخلفية: #FF7E00;}
+background:#FF7E00;}
 
 .loading-animation .F .dot {
-الموضع: مطلق؛
-يمين: 0؛
-العرض: 15 بكسل؛
-الارتفاع: 15 بكسل؛
+position:absolute;
+right:0;
+width:15px;
+height:15px;
 border-radius:50%;
-الخلفية: #6F00FF;}
+background:#6F00FF;}
 
 .loading-animation .E .wrapper, .loading-animation .E .container, .loading-animation .F .wrapper, .loading-animation .F .container {
-الموضع: مطلق؛
-العرض: 100 بكسل؛
-الارتفاع: 100 بكسل؛
+position:absolute;
+width:100px;
+height:100px;
 border-radius:50%;
 display:flex;
 align-items:center;}
@@ -117,7 +118,7 @@ animation:animation1 1.2s 0.3s infinite;}
 50%{transform:translateY(-30px);}
 100%{transform:translateY(0);}}
 
-/* الرسوم المتحركة 2 */
+/* Animation 2 */
 
 .loading-animation .B .dots .dot:nth-child(1) {
 animation:animation2 1.2s infinite;}
@@ -133,7 +134,7 @@ animation:animation2 1.2s 0.3s infinite;}
 50%{transform:scale(1.6);}
 100%{transform:scale(1);}}
 
-/* الرسوم المتحركة 3 */
+/* Animation 3 */
 
 .loading-animation .C .dots .dot:nth-child(1) {
 animation:animation3 1.5s infinite;}
@@ -149,7 +150,7 @@ animation:animation3 1.5s 0.3s infinite;}
 50%{opacity:0.2;}
 100%{opacity:1;}}
 
-/* الرسوم المتحركة 4 */
+/* Animation 4 */
 
 .loading-animation .D .dots .dot:nth-child(1) {
 animation:animation4 3s 0.3s cubic-bezier(0.5,0,0,1) infinite;}
@@ -168,38 +169,38 @@ animation:animation4 3s cubic-bezier(0.5,0,0,1) infinite;}
 50%{transform:translateX(0);}
 100%{transform:translateX(200px);}}
 
-/* الرسوم المتحركة 5 */
+/* Animation 5 */
 
 .loading-animation .E .container:nth-child(1) {
---الزاوية: -30 درجة؛
+--angle:-30deg;
 animation:animation5 3s 0.35s cubic-bezier(0.5,0,0,1) infinite;}
 
 .loading-animation .E .container:nth-child(2) {
---الزاوية: -60 درجة؛
+--angle:-60deg;
 animation:animation5 3s 0.3s cubic-bezier(0.5,0,0,1) infinite;}
 
 .loading-animation .E .container:nth-child(3) {
---الزاوية: -90 درجة؛
+--angle:-90deg;
 animation:animation5 3s 0.25s cubic-bezier(0.5,0,0,1) infinite;}
 
 .loading-animation .E .container:nth-child(4) {
---الزاوية: -120 درجة؛
+--angle:-120deg;
 animation:animation5 3s 0.2s cubic-bezier(0.5,0,0,1) infinite;}
 
 .loading-animation .E .container:nth-child(5) {
---الزاوية: -150 درجة؛
+--angle:-150deg;
 animation:animation5 3s 0.15s cubic-bezier(0.5,0,0,1) infinite;}
 
 .loading-animation .E .container:nth-child(6) {
---الزاوية: -180 درجة؛
+--angle:-180deg;
 animation:animation5 3s 0.1s cubic-bezier(0.5,0,0,1) infinite;}
 
 .loading-animation .E .container:nth-child(7) {
---الزاوية: -210 درجة؛
+--angle:-210deg;
 animation:animation5 3s 0.05s cubic-bezier(0.5,0,0,1) infinite;}
 
 .loading-animation .E .container:nth-child(8) {
---الزاوية: -240 درجة؛
+--angle:-240deg;
 animation:animation5 3s cubic-bezier(0.5,0,0,1) infinite;}
 
 @keyframes animation5 {
@@ -207,7 +208,7 @@ animation:animation5 3s cubic-bezier(0.5,0,0,1) infinite;}
 50%{transform:rotate(var(--angle));}
 100%{transform:rotate(-360deg);}}
 
-/* الرسوم المتحركة 6 */
+/* Animation 6 */
 
 .loading-animation .F .container:nth-child(1) {
 transform:rotate(-30deg);}
@@ -286,7 +287,7 @@ animation:animation6 1.5s 1.2s infinite;}
 50%{transform:scale(1);opacity:1;}
 100%{transform:scale(0.5);opacity:0;}}
 
-/* الرسوم المتحركة 7 */
+/* Animation 7 */
 
 .G .loader {
 animation:rotate 2s linear infinite;
@@ -296,23 +297,23 @@ filter:drop-shadow(0 0 2px rgba(0, 0, 0, 0.2));}
 stroke-width:8px;
 stroke:#FF0099;
 fill:none;
-السكتة الدماغية-dasharray:126؛ /* 2ط ≈ 2*3.14*20 */
+stroke-dasharray:126; /* 2πr ≈ 2*3.14*20 */
 stroke-dashoffset:0;
 transform-origin:center;
 animation:dash 1.5s ease-in-out infinite;}
 
-/* الرسوم المتحركة 8 */
+/* Animation 8 */
 
 .H .loader {
-العرض: 150 بكسل؛
-الارتفاع: 150 بكسل؛
+width:150px;
+height:150px;
 animation:rotate 2s linear infinite;
 filter:drop-shadow(0 0 2px rgba(0, 0, 0, 0.2));}
 
 .H .loader circle {
 fill:none;
 stroke-width:4px;
-السكتة الدماغية-dasharray:126؛ /* 2ط ≈ 2*3.14*20 */
+stroke-dasharray:126; /* 2πr ≈ 2*3.14*20 */
 stroke-dashoffset:0;
 transform-origin:center;}
 
@@ -345,22 +346,22 @@ animation:dash 1.5s ease-in-out infinite;}
 100% {stroke-dashoffset:126;transform:rotate(360deg);}}
 
 
-/* الرسوم المتحركة 9 */
+/* Animation 9 */
 
 .I .dot {
-الموضع: مطلق؛
-العرض: 20 بكسل؛
-الارتفاع: 20 بكسل؛
+position:absolute;
+width:20px;
+height:20px;
 border-radius:50%;}
 
 .I .a {
-الخلفية: #00FFAC؛
+background:#00FFAC;
 mix-blend-mode:difference;
 transform:translateX(0) scale(0.6);
 animation:a 1s linear infinite;}
 
 .I .b {
-الخلفية:#FF0000؛
+background:#FF0000;
 mix-blend-mode:difference;
 transform:translateX(0) scale(1.3);
 animation:b 1s linear infinite;}
@@ -412,107 +413,107 @@ grid-template-columns:repeat(3,200px);}
 
 <ul class="loading-animation">
 
-<li class="A">
+ <li class="A">
 
-<div class="dots">
-<div class="dot"></div>
-<div class="dot"></div>
-<div class="dot"></div>
-</div>
+  <div class="dots">
+   <div class="dot"></div>
+   <div class="dot"></div>
+   <div class="dot"></div>
+  </div>
 
-</li>
+ </li>
 
-<li class="B">
+ <li class="B">
 
-<div class="dots">
-<div class="dot"></div>
-<div class="dot"></div>
-<div class="dot"></div>
-</div>
+  <div class="dots">
+   <div class="dot"></div>
+   <div class="dot"></div>
+   <div class="dot"></div>
+  </div>
 
-</li>
+ </li>
 
-<li class="C">
+ <li class="C">
 
-<div class="dots">
-<div class="dot"></div>
-<div class="dot"></div>
-<div class="dot"></div>
-</div>
+  <div class="dots">
+   <div class="dot"></div>
+   <div class="dot"></div>
+   <div class="dot"></div>
+  </div>
 
-</li>
+  </li>
 
-<li class="D">
+ <li class="D">
 
-<div class="dots">
-<div class="dot"></div>
-<div class="dot"></div>
-<div class="dot"></div>
-<div class="dot"></div>
-</div>
+  <div class="dots">
+   <div class="dot"></div>
+   <div class="dot"></div>
+   <div class="dot"></div>
+   <div class="dot"></div>
+  </div>
 
-</li>
+  </li>
 
-<li class="E">
+ <li class="E">
 
-<div class="wrapper">
-<div class="container"><div class="dot"></div></div>
-<div class="container"><div class="dot"></div></div>
-<div class="container"><div class="dot"></div></div>
-<div class="container"><div class="dot"></div></div>
-<div class="container"><div class="dot"></div></div>
-<div class="container"><div class="dot"></div></div>
-<div class="container"><div class="dot"></div></div>
-<div class="container"><div class="dot"></div></div>
-</div>
+  <div class="wrapper">
+   <div class="container"><div class="dot"></div></div>
+   <div class="container"><div class="dot"></div></div>
+   <div class="container"><div class="dot"></div></div>
+   <div class="container"><div class="dot"></div></div>
+   <div class="container"><div class="dot"></div></div>
+   <div class="container"><div class="dot"></div></div>
+   <div class="container"><div class="dot"></div></div>
+   <div class="container"><div class="dot"></div></div>
+  </div>
 
-</li>
+  </li>
 
-<li class="F">
+ <li class="F">
 
-<div class="wrapper">
-<div class="container"><div class="dot"></div></div>
-<div class="container"><div class="dot"></div></div>
-<div class="container"><div class="dot"></div></div>
-<div class="container"><div class="dot"></div></div>
-<div class="container"><div class="dot"></div></div>
-<div class="container"><div class="dot"></div></div>
-<div class="container"><div class="dot"></div></div>
-<div class="container"><div class="dot"></div></div>
-<div class="container"><div class="dot"></div></div>
-<div class="container"><div class="dot"></div></div>
-<div class="container"><div class="dot"></div></div>
-<div class="container"><div class="dot"></div></div>
-</div>
+  <div class="wrapper">
+   <div class="container"><div class="dot"></div></div>
+   <div class="container"><div class="dot"></div></div>
+   <div class="container"><div class="dot"></div></div>
+   <div class="container"><div class="dot"></div></div>
+   <div class="container"><div class="dot"></div></div>
+   <div class="container"><div class="dot"></div></div>
+   <div class="container"><div class="dot"></div></div>
+   <div class="container"><div class="dot"></div></div>
+   <div class="container"><div class="dot"></div></div>
+   <div class="container"><div class="dot"></div></div>
+   <div class="container"><div class="dot"></div></div>
+   <div class="container"><div class="dot"></div></div>  
+  </div>
 
-</li>
+  </li>
 
-<li class="G">
-<svg class="loader" width="100" height="100" viewBox="0 0 80 80" fill="none" xmlns=" http://www.w3.org/2000/svg ">
-<circle cx="40" cy="40" r="20" stroke-linecap="round"/>
-</svg>
-</li>
+  <li class="G">
+   <svg class="loader" width="100" height="100" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="40" cy="40" r="20" stroke-linecap="round"/>
+   </svg>
+  </li>
 
-<li class="H" style="background:#fff;">
-<svg class="loader" width="100" height="100" viewBox="0 0 80 80" fill="none" xmlns=" http://www.w3.org/2000/svg ">
-<circle cx="40" cy="40" r="20" stroke-linecap="round"/>
-<circle cx="40" cy="40" r="20" stroke-linecap="round"/>
-<circle cx="40" cy="40" r="20" stroke-linecap="round"/>
-<circle cx="40" cy="40" r="20" stroke-linecap="round"/>
-<circle cx="40" cy="40" r="20" stroke-linecap="round"/>
-</svg>
-</li>
+  <li class="H" style="background:#fff;">
+   <svg class="loader" width="100" height="100" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="40" cy="40" r="20" stroke-linecap="round"/>
+    <circle cx="40" cy="40" r="20" stroke-linecap="round"/>
+    <circle cx="40" cy="40" r="20" stroke-linecap="round"/>
+    <circle cx="40" cy="40" r="20" stroke-linecap="round"/>
+    <circle cx="40" cy="40" r="20" stroke-linecap="round"/>
+   </svg>
+  </li>
 
-<li class="I">
-<div class="dot a"></div>
-<div class="dot b"></div>
-</li>
+  <li class="I">
+   <div class="dot a"></div>
+   <div class="dot b"></div>
+  </li>
 
-<li></li>
+ <li></li>
 
-<li></li>
+ <li></li>
 
-<li></li>
+ <li></li>
 
 </ul>
 
